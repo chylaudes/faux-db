@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h2><%= @user[:first]%> <%= @user[:last]%> </h2>
+
+  <h2>Update User</h2>
+
+  <form action="/users/<%= @user[:id]%>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <div>
+      <label for="first">First name:</label>
+      <input type="text" name="first_name" id="first">
+    </div>
+
+    <div>
+      <label for="last">Last name:</label>
+      <input type="text" name="last_name" id="last">
+    </div>
+
+    <input type="submit" value="Update User">
+  </form>
+
+  <br>
+
+  <form action="/users/<%= @user[:id]%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete!">
+  </form>
+
+
+
+
+</body>
+</html>
